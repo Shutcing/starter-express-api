@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 // Post route to handle retrieving data from HTML form to server
 app.post("/send_email", (req, res) => {
   console.log(req.body.subject);
-  transporter.sendMail(mailOptions);
+  console.log(transporter.sendMail(mailOptions));
   return res.redirect("/success.html");
 });
 
