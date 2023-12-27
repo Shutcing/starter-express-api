@@ -1,19 +1,86 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+/*-------ОБНУЛЕНИЕ------------------------------*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+html,
 body {
-  font-family: "Poppins";
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: black;
+}
+/*------------------------------------------------*/
+body {
+  font-family: "Open Sans";
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 70vh;
-  color: #333333;
+  background: #6e8251;
 }
-
 a {
-  color: blue;
+  width: 30%;
 }
 
+a .button {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  border-radius: 40px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  cursor: pointer;
+
+  background: linear-gradient(
+    142deg,
+    rgba(255, 255, 255, 0.7) 1.68%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  backdrop-filter: blur(10px);
+  height: 90px;
+}
+h1 {
+  text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90px; /* 128.571% */
+  background: linear-gradient(252deg, #fff 8.48%, #e6e6a5 96.39%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 a:hover {
   opacity: 0.8;
 }
