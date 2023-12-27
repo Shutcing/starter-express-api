@@ -3,11 +3,12 @@ const screenHeight = window.screen.height;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
 if (screenWidth / screenHeight >= 1) {
-  canvas.height = window.screen.height;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 } else {
-  canvas.height = window.screen.height / 1.8;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight / 1.8;
 }
 
 const images = [];
