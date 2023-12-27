@@ -20,9 +20,15 @@ app.get("/", (req, res) => {
 
 // Post route to handle retrieving data from HTML form to server
 app.post("/send_email", (req, res) => {
-  console.log(req.body.subject);
-  console.log(transporter.sendMail(mailOptions));
+  const mailOptions = {
+    from: "shutcing@gmail.com",
+    to: "shutcing@gmail.com",
+    subject: "Заявка",
+    text: `Имя:  ${req.body.name} \n Фамилия: ${req.body.surname} \n Почта: ${req.body.mail}`,
+  };
+  transporter.sendMail(mailOptions);
   return res.redirect("/success.html");
+  window.location.reload();
 });
 
 // require("dotenv").config();
@@ -35,13 +41,6 @@ const transporter = nodemailer.createTransport({
     pass: "jfjf aqrj xidi kiog",
   },
 });
-
-const mailOptions = {
-  from: "shutcing@gmail.com",
-  to: "shutcing@gmail.com",
-  subject: "Письмо из js",
-  text: ":3",
-};
 
 // Express allows us to listen to the PORT and trigger a console.log() when you visit the port
 app.listen(PORT, () => {
