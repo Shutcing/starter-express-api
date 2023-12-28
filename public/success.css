@@ -1,4 +1,6 @@
+@charset "UTF-8";
 /*-------ОБНУЛЕНИЕ------------------------------*/
+/*---------------------------------------*/
 *,
 *::before,
 *::after {
@@ -7,17 +9,21 @@
   border: 0;
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
 }
+
 ul,
 ol,
 li {
   list-style: none;
 }
+
 img {
   vertical-align: top;
 }
+
 h1,
 h2,
 h3,
@@ -27,6 +33,7 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
+
 html,
 body {
   height: 100%;
@@ -34,6 +41,7 @@ body {
   font-size: 16px;
   color: black;
 }
+
 /*------------------------------------------------*/
 body {
   font-family: "Open Sans";
@@ -44,6 +52,7 @@ body {
   height: 70vh;
   background: #6e8251;
 }
+
 a {
   width: 30%;
 }
@@ -60,27 +69,49 @@ a .button {
   align-items: center;
   margin-top: 60px;
   cursor: pointer;
-
-  background: linear-gradient(
-    142deg,
-    rgba(255, 255, 255, 0.7) 1.68%,
-    rgba(255, 255, 255, 0) 100%
-  );
-
-  backdrop-filter: blur(10px);
+  background: linear-gradient(142deg, rgba(255, 255, 255, 0.7) 1.68%, rgba(255, 255, 255, 0) 100%);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   height: 90px;
 }
+@media (max-width: 1276px) {
+  a .button {
+    font-size: calc(13.3333333333px + 26.6666666667 * (100vw - 320px) / 956);
+  }
+}
+@media (max-width: 1276px) {
+  a .button {
+    border-radius: calc(13.3333333333px + 26.6666666667 * (100vw - 320px) / 956);
+  }
+}
+@media (max-width: 1276px) {
+  a .button {
+    margin-top: calc(20px + 40 * (100vw - 320px) / 956);
+  }
+}
+@media (max-width: 1276px) {
+  a .button {
+    height: calc(30px + 60 * (100vw - 320px) / 956);
+  }
+}
+
 h1 {
   text-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
   font-size: 70px;
   font-style: normal;
   font-weight: 600;
-  line-height: 90px; /* 128.571% */
+  line-height: 128.571%; /* 128.571% */
   background: linear-gradient(252deg, #fff 8.48%, #e6e6a5 96.39%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 1276px) {
+  h1 {
+    font-size: calc(23.3333333333px + 46.6666666667 * (100vw - 320px) / 956);
+  }
+}
+
 a:hover {
   opacity: 0.8;
 }
@@ -88,3 +119,14 @@ a:hover {
 body .icon {
   font-size: 3rem;
 }
+
+@media (max-width: 900px) {
+  a .button {
+    width: 250%;
+    margin-left: -70%;
+    margin-top: 50%;
+  }
+  h1 {
+    margin-left: 5%;
+  }
+}/*# sourceMappingURL=success.css.map */
