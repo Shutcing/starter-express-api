@@ -556,4 +556,10 @@ button svg {
     width: 70%;
     height: 40%;
   }
+  .send-btn {
+    margin-top: 10%;
+  }
+  .name {
+    margin-top: 5%;
+  }
 }/*# sourceMappingURL=back.css.map */
