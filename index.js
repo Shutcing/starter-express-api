@@ -28,7 +28,6 @@ app.post("/send_email", (req, res) => {
   };
   transporter.sendMail(mailOptions);
   return res.redirect("/success.html");
-  window.location.reload();
 });
 
 // require("dotenv").config();
