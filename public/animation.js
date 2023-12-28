@@ -9,6 +9,9 @@ if (screenWidth / screenHeight >= 1) {
 } else {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight / 1.8;
+  if (screenWidth < 900) {
+    canvas.height = window.innerHeight / 1.25;
+  }
 }
 
 const images = [];
@@ -34,12 +37,28 @@ class ImageObj {
     this.x += this.dx;
     this.y += this.dy;
 
-    if (this.x + this.width > canvas.width / 1.5 || this.x < 0) {
-      this.dx = -this.dx;
-    }
+    if (screenWidth < 900) {
+      if (
+        this.x + this.width > canvas.width + 0.083 * screenWidth ||
+        this.x < -0.083 * screenWidth
+      ) {
+        this.dx = -this.dx;
+      }
 
-    if (this.y + this.height > canvas.height || this.y < canvas.height / 7) {
-      this.dy = -this.dy;
+      if (this.y + this.height > canvas.height || this.y < canvas.height / 7) {
+        this.dy = -this.dy;
+      }
+    } else {
+      if (
+        this.x + this.width > canvas.width / 1.5 ||
+        this.x < -0.083 * screenWidth
+      ) {
+        this.dx = -this.dx;
+      }
+
+      if (this.y + this.height > canvas.height || this.y < canvas.height / 7) {
+        this.dy = -this.dy;
+      }
     }
   }
 }
@@ -86,15 +105,28 @@ function animate() {
 
 function init() {
   const imageUrl = "img/Group 2.png"; // Замените на URL вашего изображения
-  var sizes = [
-    screenWidth * 0.1666,
-    screenWidth * 0.125,
-    screenWidth * 0.0833,
-    screenWidth * 0.05,
-    screenWidth * 0.0833,
-    screenWidth * 0.058333,
-    screenWidth * 0.05,
-  ];
+  if (screenWidth < 900) {
+    var sizes = [
+      screenWidth * 0.1666 * 3,
+      screenWidth * 0.125 * 3,
+      screenWidth * 0.0833 * 3,
+      screenWidth * 0.05 * 3,
+      screenWidth * 0.0833 * 3,
+      screenWidth * 0.058333 * 3,
+      screenWidth * 0.05 * 3,
+    ];
+  } else {
+    var sizes = [
+      screenWidth * 0.1666,
+      screenWidth * 0.125,
+      screenWidth * 0.0833,
+      screenWidth * 0.05,
+      screenWidth * 0.0833,
+      screenWidth * 0.058333,
+      screenWidth * 0.05,
+    ];
+  }
+
   var ind = 0;
   for (let i = 0; i < 7; i++) {
     const width = sizes[ind];
